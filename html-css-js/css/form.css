@@ -1,0 +1,160 @@
+/*
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    AKAI Frontend Task - CSS
+
+    Spróbuj zmodyfikować poniższy plik ze stylami tak, by upiększyć formularz na stronie.
+    Jako inspiracji możesz skorzystać z szablonu znajdującego się w pliku img/layout.png
+    Nie wymagamy, by wykonać identyczny layout. Liczy się kreatywność.
+
+    Przy wykonywaniu zadania można zmienić strukturę pliku index.html.
+    Pamiętaj, że w takim wypadku będzie trzeba zadbać o dostosowanie odpowiednich selektorów.
+
+    Jeśli korzystasz z preprocessorów takich jak Sass/Less, również możesz się tym pochwalić.
+
+    Powodzenia!
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+*/
+:root {
+  --grad-purple: #BA44FF;
+  --grad-blue: #47A2EA;
+  --light-grey: #e7e7e8e8;
+  --main-blue: #5952FF;
+  --soft-green: #66D47A;
+  --black: #000000;
+  --white: #ffffff;
+}
+
+html {
+  width: 100%;
+  height: 100%;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  font-family: "Lato", "Comic Sans MS", "Comic Sans", cursive;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+}
+
+#bgc-wrapper {
+  position: absolute;
+  width: 250%;
+  height: 250%;
+  z-index: -1;
+  background-image: linear-gradient(45deg, var(--grad-purple) 35%, var(--grad-blue) 65%);
+  animation: grad-rotate 10s linear infinite;
+}
+
+#task-frontend {
+  padding: 25px;
+  min-width: 30%;
+  min-height: 60%;
+  text-align: center;
+  background-color: rgba(231, 231, 232, .25);
+  border-radius: 10px;
+  box-shadow: 4px 4px 10px 0px rgba(66, 68, 90, .5);
+}
+
+#task-frontend form {
+  height: 100%;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+}
+
+#task-frontend .basic-title {
+  font-size: 2rem;
+  text-shadow: rgba(66, 68, 90, .5) 3px 3px 4px;
+  color: var(--main-blue);
+  align-self: flex-start;
+  margin-bottom: 10px;
+}
+
+#task-frontend .form-line {
+  border: 1px solid blue;
+}
+
+#task-frontend form>label {
+  text-transform: uppercase;
+  margin: 10px auto 0 auto;
+}
+
+#task-frontend form .section-wrapper .section-checkboxes {
+  color: var(--main-blue);
+}
+
+#task-frontend input[type="text"],
+#task-frontend input[type="email"] {
+  display: block;
+  margin: 20px auto;
+  padding: 0 10px;
+  border: none;
+  border-radius: 10px;
+  width: 250px;
+  height: 35px;
+  background-color: var(--light-grey);
+  box-shadow: 4px 4px 10px 0px rgba(66, 68, 90, 1);
+  transform: translate(-4px, -4px);
+  transition: all .25s;
+}
+
+#task-frontend input[type="email"] {
+  margin-bottom: 30px;
+}
+
+#task-frontend input[type="text"]:focus,
+#task-frontend input[type="email"]:focus {
+  box-shadow: 0px 0px 10px 0px rgba(66, 68, 90, 1);
+  transform: translate(0px, 0px);
+  outline: none;
+}
+
+#task-frontend span {
+  display: block;
+  font-size: 1.5rem;
+  margin-bottom: 10px;
+}
+
+.section-checkboxes label {
+  font-size: 1.25rem;
+}
+
+#task-frontend input[type="checkbox"] {
+  border: 1px solid red;
+  text-transform: none;
+}
+
+#task-frontend input[type="submit"] {
+  color: var(--soft-green);
+  font-size: 1rem;
+  font-weight: bold;
+  background-color: var(--light-grey);
+  border: none;
+  border-radius: 10px;
+  margin-top: 20px;
+  width: 200px;
+  height: 50px;
+  text-align: center;
+  box-shadow: 0px 0px 10px 0px rgba(66, 68, 90, 1);
+  transform: translate(0px, 0px);
+  margin: 20px 0;
+}
+
+@keyframes grad-rotate {
+  0%{
+    transform: rotate(0deg);
+  }
+  50% {
+    transform: rotate(180deg);;
+  }
+  100%{
+    transform: rotate(360deg);;
+  }
+}
